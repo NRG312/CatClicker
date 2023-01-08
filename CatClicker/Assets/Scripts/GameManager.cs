@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     public void BuyUpgradesOnTap(float Price,float Amount)
     {
         Money -= Price;
+        AmountOnClick += Amount;
         RefreshUI();
     }
     public void BuyUpgradesPassive(float Price,float Amount)
