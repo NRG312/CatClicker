@@ -26,11 +26,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [Header("TapMainImageParameters")]
+    [Header("CatImageToclick Parameters")]
     public Button Image;
+    private Animator AnimImage;
     [HideInInspector] public float AmountOnClick = 0.5f;
     [HideInInspector] public float PassiveMoney;
-
     private void RefreshUI()
     {
         TextMoney.text = Money.ToString("F1");
@@ -38,12 +38,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        
         StartCoroutine(PassiveGrowth());
-        Image.onClick.AddListener(MoneyGrowth);
+        
+        Image.onClick.AddListener(MoneyGrowthOnClick);
+        AnimImage = Image.GetComponent<Animator>();
     }
-    public void MoneyGrowth()
+    //On Click Money Growth and Turning Animation Cat
+    public void MoneyGrowthOnClick()
     {
         Money += AmountOnClick;
+        AnimImage.SetTrigger("Click");
+    }
+    public void IncreaseStatistics(float Price)
+    {
+        Money -= Price;
+        RefreshUI();
     }
     public void BuyUpgradesOnTap(float Price,float Amount)
     {
