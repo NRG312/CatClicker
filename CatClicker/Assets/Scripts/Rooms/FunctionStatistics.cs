@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FunctionStatistics : MonoBehaviour
 {
+    public static FunctionStatistics instance;
     [Header("StatisticsSlider")]
     [SerializeField] private Slider Hygiene;
     [SerializeField] private Slider WC;
@@ -12,10 +13,10 @@ public class FunctionStatistics : MonoBehaviour
     [SerializeField] private Slider Sleep;
 
     //Main Amounts for stats
-    private int hygiene = 100;
-    private int wc = 100;
-    private int hunger = 100;
-    private int sleep = 100;
+    [HideInInspector] public int hygiene = 100;
+    [HideInInspector] public int wc = 100;
+    [HideInInspector] public int hunger = 100;
+    [HideInInspector] public int sleep = 100;
     //bools for enumerators
     private bool loopHygiene = true;
     private bool loopWc = true;
@@ -157,18 +158,11 @@ public class FunctionStatistics : MonoBehaviour
     }
     
 
-    public void HungerFunction()
+    public void HungerFunction(Food food)
     {
-        if (hunger < 100)
-        {
-            if (PriceHunger <= GameManager.instance.Money)
-            {
-                GameManager.instance.IncreaseStatistics(PriceHunger);
-                hunger += IncHunger;
-                RefreshUI();
-                CheckingValueofStats();
-            }
-        }
+        hunger += food.ValueToIncrease;
+        RefreshUI();
+        CheckingValueofStats();
     }
     private IEnumerator ReducingHunger()
     {

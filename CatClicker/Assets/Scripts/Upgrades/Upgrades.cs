@@ -7,16 +7,21 @@ using TMPro;
 public class Upgrades : MonoBehaviour
 {
     private Button Upgrade;
+    [Header("To Change Text")]
+    public string Nameupgrade;
+    private TMP_Text NameUpgrade;
+
+    public string Whatwillgive;
+    private TMP_Text WhatWillGive;
+
     [Header("Price")]
     [SerializeField] private float Price = 5f;//
     [SerializeField] private float MultiplierPrice;//
     private TMP_Text PriceTxt;
     [Header("UpgradesOnTap")]
     [SerializeField] private float UpgradeOnTap;//
-    //[SerializeField] private float MultiplierAfterBuyOnTap;//
     [Header("PassiveUpgrades")]
     [SerializeField] private float PassiveUpgrade;//
-    //[SerializeField] private float MultiplierAfterBuyPassive;//
     [SerializeField] private bool IsPassiveUpgrade;
     //Amount
     private TMP_Text AmountTxt;
@@ -24,6 +29,14 @@ public class Upgrades : MonoBehaviour
 
     void Start()
     {
+        //Texts to change
+        NameUpgrade = transform.Find("UpgradeName").GetComponent<TMP_Text>();
+        WhatWillGive = transform.Find("UpgradeGiving").GetComponent<TMP_Text>();
+
+        NameUpgrade.text = Nameupgrade;
+        WhatWillGive.text = Whatwillgive;
+
+        //Basic functions
         Upgrade = transform.Find("BuyButton").GetComponent<Button>();
         PriceTxt = transform.Find("Price").GetComponent<TMP_Text>();
         AmountTxt = transform.Find("Amount").GetComponent<TMP_Text>();
