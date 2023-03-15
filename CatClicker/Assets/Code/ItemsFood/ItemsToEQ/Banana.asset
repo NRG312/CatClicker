@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f49189bcdf57944b0502dd3118ce32, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: 
-  ImageFood: {fileID: 21300000, guid: a4d9e1c4ec82ab943b8c17403581ac02, type: 3}
+  ImageFood: {fileID: 21300000, guid: ae84f382cf1bf1447ac449c10e4320e8, type: 3}
   ValueToIncrease: 10
   NameFood: Banana

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f49189bcdf57944b0502dd3118ce32, type: 3}
   m_Name: HotDog
   m_EditorClassIdentifier: 
-  ImageFood: {fileID: 21300000, guid: 53683ccfa8fa7b44ab39fc4d58d089da, type: 3}
+  ImageFood: {fileID: 21300000, guid: cdb26203ccdbec84cbd15fcc2b0dd71d, type: 3}
   ValueToIncrease: 0
-  NameFood: 
+  NameFood: Hotdog

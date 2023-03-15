@@ -40,16 +40,6 @@ public class FunctionStatistics : MonoBehaviour
     [Header("Reducing Sleep")]
     [SerializeField] private int TimeSleep;
     [SerializeField] private int AmountSleep;
-    [Header("Increase Statistics After Use")]
-    [SerializeField] private int IncHygiene;
-    [SerializeField] private int IncWC;
-    [SerializeField] private int IncHunger;
-    [SerializeField] private int IncSleep;
-    [Header("Prices for Increase")]
-    [SerializeField] private float PriceHygiene;
-    [SerializeField] private float PriceWC;
-    [SerializeField] private float PriceHunger;
-    [SerializeField] private float PriceSleep;
 
     private void Start()
     {
@@ -97,16 +87,17 @@ public class FunctionStatistics : MonoBehaviour
         
     }
 
-    public void HygieneFunction()
+    float time;
+    public void HygieneFunction(int Increase)
     {
-        if (hygiene < 100)
+        if (hygiene < 100) //pomysl potem nad tym zeby zrobic gladkie zwiekszanie higieny
         {
-            if (PriceHygiene <= GameManager.instance.Money)
+            time += Time.deltaTime;
+            if (time >= 0.3f)
             {
-                GameManager.instance.IncreaseStatistics(PriceHygiene);
-                hygiene += IncHygiene;
+                hygiene += Increase;
                 RefreshUI();
-                CheckingValueofStats();
+                time = 0;
             }
         }
     }
@@ -132,13 +123,13 @@ public class FunctionStatistics : MonoBehaviour
     {
         if (wc < 100)
         {
-            if (PriceWC <= GameManager.instance.Money)
+            /*if (PriceWC <= GameManager.instance.Money)
             {
                 GameManager.instance.IncreaseStatistics(PriceWC);
                 wc += IncWC;
                 RefreshUI();
                 CheckingValueofStats();
-            }
+            }*/
         }
     }
     private IEnumerator ReducingWC()
@@ -185,13 +176,13 @@ public class FunctionStatistics : MonoBehaviour
     {
         if (sleep < 100)
         {
-            if (PriceSleep <= GameManager.instance.Money)
+            /*if (PriceSleep <= GameManager.instance.Money)
             {
                 GameManager.instance.IncreaseStatistics(PriceSleep);
                 sleep += IncSleep;
                 RefreshUI();
                 CheckingValueofStats();
-            }
+            }*/
         }
     }
     private IEnumerator ReducingSleep()

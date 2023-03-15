@@ -26,11 +26,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [Header("CatImageToclick Parameters")]
+    [Header("CatImage click Parameters")]
     public Button Image;
+    public bool CanClickOnCat;
     private Animator AnimImage;
-    [HideInInspector] public float AmountOnClick = 0.5f;
-    [HideInInspector] public float PassiveMoney;
+    
+    [Header("OnClick Increase Money Parameters")]
+    [Range(0,1)]public float chanceforCrit;
+    public float MultiplierCrit;
+    [HideInInspector]public float AmountOnClick = 0.5f;
+    [HideInInspector]public float PassiveMoney;
+    
     private void RefreshUI()
     {
         TextMoney.text = Money.ToString("F1");
@@ -44,17 +50,35 @@ public class GameManager : MonoBehaviour
         Image.onClick.AddListener(MoneyGrowthOnClick);
         AnimImage = Image.GetComponent<Animator>();
     }
+
+    //Checking Image cat interactable
+    private void Update()
+    {
+        if (CanClickOnCat == true)
+        {
+            Image.interactable = true;
+        }
+        else
+        {
+            Image.interactable = false;
+        }
+    }
     //On Click Money Growth and Turning Animation Cat
     public void MoneyGrowthOnClick()
     {
-        Money += AmountOnClick;
-        AnimImage.SetTrigger("Click");
+        if (Random.value > chanceforCrit)
+        {
+            Debug.Log("Crit");
+            Money += AmountOnClick * MultiplierCrit;
+            AnimImage.SetTrigger("Click");
+        }
+        else
+        {
+            Money += AmountOnClick;
+            AnimImage.SetTrigger("Click");
+        }
     }
-    public void IncreaseStatistics(float Price)
-    {
-        Money -= Price;
-        RefreshUI();
-    }
+    //Functions To buy upgrades from Upgrades Script
     public void BuyUpgradesOnTap(float Price,float Amount)
     {
         Money -= Price;
@@ -67,6 +91,7 @@ public class GameManager : MonoBehaviour
         PassiveMoney += Amount;
         RefreshUI();
     }
+    //
     private IEnumerator PassiveGrowth()
     {
         bool s = true;

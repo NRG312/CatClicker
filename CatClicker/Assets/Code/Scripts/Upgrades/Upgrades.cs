@@ -49,6 +49,7 @@ public class Upgrades : MonoBehaviour
         PriceTxt.text = "Price " + Price.ToString("F2");
         AmountTxt.text = ActualAmount.ToString();
     }
+    //Buying Upgrade
     private void OnClick()
     {
         if (GameManager.instance.Money >= Price && IsPassiveUpgrade == false)

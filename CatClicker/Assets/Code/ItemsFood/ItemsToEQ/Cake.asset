@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f49189bcdf57944b0502dd3118ce32, type: 3}
   m_Name: Cake
   m_EditorClassIdentifier: 
-  ImageFood: {fileID: 21300000, guid: 3fb4954faabc724418e4a59d6f6e6cf7, type: 3}
+  ImageFood: {fileID: 21300000, guid: 7b0bed617374c464ea589efd09a1ae83, type: 3}
   ValueToIncrease: 0
-  NameFood: 
+  NameFood: Cake
