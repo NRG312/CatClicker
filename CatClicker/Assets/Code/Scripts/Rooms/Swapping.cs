@@ -23,16 +23,18 @@ public class Swapping : MonoBehaviour
     private bool SwapRight;
     private bool SwapLeft;
 
-    //Animators Images
+  /*  //Animators Images
     private Animator LivingRoomAnim;
     private Animator ToiletAnim;
     private Animator KitchenAnim;
     //Animator Items Interface Kitchen
     private Animator BowlSwap;
     //Animator Items Interface toilet
-    private Animator Shower;
+    private Animator Shower;*/
     //Timer Parameters
     float time = 0.5f;
+
+    
 
     private void Start()
     {
@@ -40,7 +42,7 @@ public class Swapping : MonoBehaviour
         Arrowright.onClick.AddListener(ArrowRight);
 
 
-        //Searching Images
+       /* //Searching Images
         LivingRoomImage = LivingRoom.GetComponentInChildren<Image>();
         ToiletImage = Toilet.GetComponentInChildren<Image>();
         KitchenImage = Kitchen.GetComponentInChildren<Image>();
@@ -51,10 +53,10 @@ public class Swapping : MonoBehaviour
         //Seraching Animators for interface items in Kitchen
         BowlSwap = Kitchen.transform.Find("Bowl").GetComponent<Animator>();
         //Seraching Animators for interface items in Toilet
-        Shower = GameObject.Find("InterfaceToilet").transform.Find("ShowerBackGround").GetComponent<Animator>();
+        Shower = GameObject.Find("InterfaceToilet").transform.Find("ShowerBackGround").GetComponent<Animator>();*/
     }
     //Checking for turn off Triggers && Changing sort orders
-    private void Update()
+    /*private void Update()
     {
         if (SwapLeft == false)
         {
@@ -156,7 +158,7 @@ public class Swapping : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
     //Waiting for next swap
     private IEnumerator Timer()
     {
@@ -171,33 +173,40 @@ public class Swapping : MonoBehaviour
     {
         if (SwapRight == false)
         {
-            StartCoroutine(Timer());
+            //StartCoroutine(Timer());
 
             if (LivingRoom.enabled == true)
             {
-                LivingRoomAnim.SetTrigger("Right");
+                //LivingRoomAnim.SetTrigger("Right");
+                GameManager.instance.CanClickOnCat = false;
                 Toilet.enabled = true;
-
-                SwapRight = true;
-                SwapLeft = true;
+                LivingRoom.enabled = false;
+                Kitchen.enabled = false;
+                //SwapRight = true;
+                //SwapLeft = true;
             }
             else if (Toilet.enabled == true)
             {
-                ToiletAnim.SetTrigger("Right");
-                Shower.SetTrigger("Right");
+                //ToiletAnim.SetTrigger("Right");
+                //Shower.SetTrigger("Right");
+                GameManager.instance.CanClickOnCat = false;
                 Kitchen.enabled = true;
-
-                SwapRight = true;
-                SwapLeft = true;
+                Toilet.enabled = false;
+                LivingRoom.enabled = false;
+                //SwapRight = true;
+                //SwapLeft = true;
             }
             else if (Kitchen.enabled == true)
             {
-                KitchenAnim.SetTrigger("Right");
-                BowlSwap.SetTrigger("Right");
+                //KitchenAnim.SetTrigger("Right");
+                //BowlSwap.SetTrigger("Right");
+                GameManager.instance.CanClickOnCat = true;
                 LivingRoom.enabled = true;
+                Kitchen.enabled = false;
+                Toilet.enabled = false;
 
-                SwapRight = true;
-                SwapLeft = true;
+                //SwapRight = true;
+                //SwapLeft = true;
             }
             
         }
@@ -206,33 +215,41 @@ public class Swapping : MonoBehaviour
     {
         if (SwapLeft == false)
         {
-            StartCoroutine(Timer());
+            //StartCoroutine(Timer());
 
             if (LivingRoom.enabled == true)
             {
-                LivingRoomAnim.SetTrigger("Left");
+                //LivingRoomAnim.SetTrigger("Left");
+                GameManager.instance.CanClickOnCat = false;
                 Kitchen.enabled = true;
-
-                SwapLeft = true;
-                SwapRight = true;
+                Toilet.enabled = false;
+                LivingRoom.enabled = false;
+                //SwapLeft = true;
+               // SwapRight = true;
             }
             else if (Kitchen.enabled == true)
             {
-                KitchenAnim.SetTrigger("Left");
-                BowlSwap.SetTrigger("Left");
+                //KitchenAnim.SetTrigger("Left");
+                //BowlSwap.SetTrigger("Left");
+                GameManager.instance.CanClickOnCat = false;
                 Toilet.enabled = true;
+                Kitchen.enabled = false;
+                LivingRoom.enabled = false;
 
-                SwapLeft = true;
-                SwapRight = true;
+                //SwapLeft = true;
+                //SwapRight = true;
             }
             else if (Toilet.enabled == true)
             {
-                ToiletAnim.SetTrigger("Left");
-                Shower.SetTrigger("Left");
+                //ToiletAnim.SetTrigger("Left");
+                //Shower.SetTrigger("Left");
+                GameManager.instance.CanClickOnCat = true;
                 LivingRoom.enabled = true;
+                Kitchen.enabled = false;
+                Toilet.enabled = false;
 
-                SwapLeft = true;
-                SwapRight = true;
+               // SwapLeft = true;
+                //SwapRight = true;
             }
         }
     }
