@@ -87,17 +87,17 @@ public class FunctionStatistics : MonoBehaviour
         
     }
 
-    float time;
+    float timekeeperHygiene;
     public void HygieneFunction(int Increase)
     {
         if (hygiene < 100) //pomysl potem nad tym zeby zrobic gladkie zwiekszanie higieny
         {
-            time += Time.deltaTime;
-            if (time >= 0.3f)
+            timekeeperHygiene += Time.deltaTime;
+            if (timekeeperHygiene >= 0.3f)
             {
                 hygiene += Increase;
                 RefreshUI();
-                time = 0;
+                timekeeperHygiene = 0;
             }
         }
     }
@@ -118,18 +118,31 @@ public class FunctionStatistics : MonoBehaviour
         }
     }
 
-
+    float TimeKeeperWc;
     public void WCFunction()
     {
         if (wc < 100)
         {
-            /*if (PriceWC <= GameManager.instance.Money)
+            loopWc = false;
+            TimeKeeperWc += Time.deltaTime;
+
+            if (TimeKeeperWc >= 0.2f)
             {
-                GameManager.instance.IncreaseStatistics(PriceWC);
-                wc += IncWC;
+                wc += 1;
                 RefreshUI();
+                TimeKeeperWc = 0;
+            }
+            if (wc >= 100)
+            {
+                GameObject.Find("LitterBox").GetComponent<WcFunction>().EndRegeneration();
                 CheckingValueofStats();
-            }*/
+            }
+
+        }
+        else if (wc >= 100)
+        {
+            GameObject.Find("LitterBox").GetComponent<WcFunction>().EndRegeneration();
+            CheckingValueofStats();
         }
     }
     private IEnumerator ReducingWC()
@@ -170,19 +183,32 @@ public class FunctionStatistics : MonoBehaviour
             RefreshUI();
         }
     }
-    
 
+    float timeKeeperSleep;
     public void SleepFunction()
     {
         if (sleep < 100)
         {
-            /*if (PriceSleep <= GameManager.instance.Money)
+            loopSleep = false;
+            timeKeeperSleep += Time.deltaTime;
+
+            if (timeKeeperSleep >= 0.2f)
             {
-                GameManager.instance.IncreaseStatistics(PriceSleep);
-                sleep += IncSleep;
+                sleep += 1;
                 RefreshUI();
+                timeKeeperSleep = 0;
+            }
+            if (sleep >= 100)
+            {
+                GameObject.Find("Beeding").GetComponent<SleepFunction>().EndRegeneration();
                 CheckingValueofStats();
-            }*/
+            }
+
+        }
+        else if (sleep >= 100)
+        {
+            GameObject.Find("Beeding").GetComponent<SleepFunction>().EndRegeneration();
+            CheckingValueofStats();
         }
     }
     private IEnumerator ReducingSleep()

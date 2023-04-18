@@ -29,9 +29,6 @@ public class GameManager : MonoBehaviour
     [Header("CatImage click Parameters")]
     public Button Image;
     public bool CanClickOnCat;
-    private Animator EarsAnim;
-    private Animator TailAnim;
-    private Animator EyesBlushNoseAnim;
     
     [Header("OnClick Increase Money Parameters")]
     [Range(0,1)]public float chanceforCrit;
@@ -51,9 +48,6 @@ public class GameManager : MonoBehaviour
         
         //Image cat to click to money growth
         Image.onClick.AddListener(MoneyGrowthOnClick);
-        EarsAnim = Image.transform.Find("Ears").GetComponent<Animator>();
-        TailAnim = Image.transform.Find("Tail").GetComponent<Animator>();
-        EyesBlushNoseAnim = Image.transform.Find("Eyes,Blush,Nose").GetComponent<Animator>();
     }
 
     //Checking Image cat interactable
@@ -75,17 +69,13 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Crit");
             Money += AmountOnClick * MultiplierCrit;
-            EarsAnim.SetTrigger("Click");
-            TailAnim.SetTrigger("Click");
-            EyesBlushNoseAnim.SetTrigger("Click");
+            GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
             
         }
         else
         {
             Money += AmountOnClick;
-            EarsAnim.SetTrigger("Click");
-            TailAnim.SetTrigger("Click");
-            EyesBlushNoseAnim.SetTrigger("Click");
+            GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
         }
     }
     //Functions To buy upgrades from Upgrades Script
