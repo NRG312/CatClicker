@@ -11,12 +11,16 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
     public Image CatImage;
     private Image image;
 
-    public Transform parentafterDrag;
+    [HideInInspector] public Transform parentafterDrag;
+    [HideInInspector] public TMP_Text Amount;
+    [HideInInspector] public int AmountItem = 1;
 
 
     private void Start()
     {
         CatImage = GameObject.Find("CatImage").GetComponent<Image>();
+        Amount = GetComponentInChildren<TMP_Text>();
+        Amount.text = AmountItem.ToString();
     }
     //Adding new parameters to itemFoodinEq
     public void SwitchParameters(Food newItem)
@@ -25,24 +29,27 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         image = transform.Find("ImageFood").GetComponent<Image>();
         image.sprite = newItem.ImageFood;
     }
+    public void AddAmount(int amount)
+    {
+        AmountItem += amount;
+        Amount.text = AmountItem.ToString();
+    }
     public void OnBeginDrag(PointerEventData data)
     {
         image.raycastTarget = false;
         parentafterDrag = transform.parent;
-        transform.SetParent(transform.root);
-        //GameObject.Find("FoodShopUI").GetComponent<Canvas>().sortingOrder = 0;
-        //transform.position = Input.mousePosition;
+        transform.SetParent(GameObject.Find("CatImageUI").transform);
+        GameObject.Find("FoodShopUI").GetComponent<Canvas>().enabled = false;
     }
     public void OnDrag(PointerEventData data)
     {
         transform.position = Input.mousePosition;
-        //GameObject.Find("FoodShopUI").GetComponent<Canvas>().sortingOrder = -4;
     }
     public void OnEndDrag(PointerEventData data)
     {
         image.raycastTarget = true;
-       transform.SetParent(parentafterDrag);
-        GameObject.Find("FoodShopUI").GetComponent<Canvas>().sortingOrder = 10;
+        GameObject.Find("FoodShopUI").GetComponent<Canvas>().enabled = true;
+        transform.SetParent(parentafterDrag);
     }
     
     public void OnDrop(PointerEventData data)
@@ -50,22 +57,26 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, Vector2.down);
         if (hit.collider.CompareTag("Cat"))
         {
-            GameObject RoomContoller = GameObject.Find("RoomsController");
-            if (RoomContoller.GetComponent<FunctionStatistics>().hunger < 100)
+            if (FunctionStatistics.instance.hunger < 100)
             {
-                RoomContoller.GetComponent<FunctionStatistics>().HungerFunction(item);
-                Destroy(gameObject);
-            }
-            else
-            {
-                transform.SetParent(parentafterDrag);
+                if (AmountItem > 1)
+                {
+                    FunctionStatistics.instance.HungerFunction(item);
+                    AmountItem -= 1;
+                    Amount.text = AmountItem.ToString();
+                    transform.SetParent(parentafterDrag);
+                }
+                else if(AmountItem == 1)
+                {
+                    FunctionStatistics.instance.HungerFunction(item);
+                    Destroy(gameObject);
+                }
             }
         }
-        else if(!hit.collider.CompareTag("Cat"))
+        else
         {
             transform.SetParent(parentafterDrag);
         }
-        //GameObject.Find("FoodShopUI").GetComponent<Canvas>().sortingOrder = 10;
         
     }
     

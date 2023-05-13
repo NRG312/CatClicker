@@ -103,4 +103,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Buying Products
+    public void BuyProduct(float Price)
+    {
+        Money -= Price;
+        RefreshUI();
+    }
+
 }

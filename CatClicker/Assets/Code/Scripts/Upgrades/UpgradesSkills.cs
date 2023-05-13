@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Upgrades : MonoBehaviour
+public class UpgradesSkills : MonoBehaviour
 {
     private Button Upgrade;
     [Header("To Change Text")]

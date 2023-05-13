@@ -9,7 +9,7 @@ public class SleepFunction : MonoBehaviour
     public GameObject SleepingCatObj;
     public GameObject CarpetObj;
 
-    //Components Catobj to swap
+    //Components Cat to swap
     private Image EarsCat;
     private Image EyesBlushNoseCat;
     private Image MouthCat;
@@ -18,12 +18,9 @@ public class SleepFunction : MonoBehaviour
     private Image EyesBlushNoseSleep;
     private Image MouthSleep;
 
-
-    private bool regenerationSleep;
-
     private void Update()
     {
-        if (regenerationSleep == true)
+        if (FunctionStatistics.instance.loopSleep == false)
         {
             GameObject.Find("RoomsController").GetComponent<FunctionStatistics>().SleepFunction();
         }
@@ -44,12 +41,13 @@ public class SleepFunction : MonoBehaviour
         //EyesBlushNoseSleep.sprite = EyesBlushNoseCat.sprite;
         EarsSleep.sprite = EarsCat.sprite;
 
-        regenerationSleep = true;
+        FunctionStatistics.instance.loopSleep = false;
     }
     public void EndRegeneration()
     {
         CatObj.transform.gameObject.SetActive(true);
         SleepingCatObj.transform.gameObject.SetActive(false);
-        regenerationSleep = false;
+
+        FunctionStatistics.instance.loopSleep = true;
     }
 }

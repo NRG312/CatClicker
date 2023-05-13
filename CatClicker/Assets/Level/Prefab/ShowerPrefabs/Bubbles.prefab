@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 3099873477485097443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f88ff7cbcda365744a01b750b6bb103c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8eaaa852e420c6b4faf908f2cee6a9ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -101,5 +101,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 105.77, y: 106.32}
+  m_Size: {x: 1079.95, y: 2245}
   m_EdgeRadius: 0

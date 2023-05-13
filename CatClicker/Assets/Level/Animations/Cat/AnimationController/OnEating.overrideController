@@ -6,6 +6,6 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SleepingCat
-  m_Controller: {fileID: 9100000, guid: e5c3388e758d10541adb7046c69d7b5a, type: 2}
+  m_Name: OnEating
+  m_Controller: {fileID: 9100000, guid: fda4ec277c50dee4298f3900c188e1b9, type: 2}
   m_Clips: []

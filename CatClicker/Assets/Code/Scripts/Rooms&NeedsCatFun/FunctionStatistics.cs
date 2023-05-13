@@ -18,10 +18,10 @@ public class FunctionStatistics : MonoBehaviour
     [HideInInspector] public int hunger = 100;
     [HideInInspector] public int sleep = 100;
     //bools for enumerators
-    private bool loopHygiene = true;
-    private bool loopWc = true;
+    [HideInInspector]public bool loopHygiene = true;
+    [HideInInspector]public bool loopWc = true;
     private bool loopHunger = true;
-    private bool loopSleep = true;
+    [HideInInspector]public bool loopSleep = true;
     //enumerators to stats
     private IEnumerator Reducinghygiene;
     private IEnumerator Reducingwc;
@@ -43,6 +43,9 @@ public class FunctionStatistics : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
+
+
         Hygiene.value = hygiene;
         WC.value = wc;
         Hunger.value = hunger;

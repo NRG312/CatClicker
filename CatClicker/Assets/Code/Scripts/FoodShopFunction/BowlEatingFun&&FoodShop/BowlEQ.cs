@@ -34,6 +34,11 @@ public class BowlEQ : MonoBehaviour
                 prefab.SwitchParameters(item);
                 return;
             }
+            if (IteminSlot != null && IteminSlot.item == item)
+            {
+                IteminSlot.AddAmount(1);
+                return;
+            }
         }
     }
 }

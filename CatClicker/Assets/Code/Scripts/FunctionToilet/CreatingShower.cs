@@ -9,7 +9,7 @@ public class CreatingShower : MonoBehaviour,IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Instantiate(Shower, transform);
+        Instantiate(Shower, GameObject.Find("CatImageUI").transform);
     }
 
     

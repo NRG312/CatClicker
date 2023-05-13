@@ -8,25 +8,22 @@ public class WcFunction : MonoBehaviour
 
     public GameObject BowlPosition;
 
-    private bool RegenerationWC;
-
     private void Update()
     {
-        if (RegenerationWC == true)
+        if (FunctionStatistics.instance.loopWc == false)
         {
-            GameObject.Find("RoomsController").GetComponent<FunctionStatistics>().WCFunction();
+            FunctionStatistics.instance.WCFunction();
         }
     }
     public void StartRegeneration()
     {
         CatObj.transform.position = transform.position + new Vector3(20, 135);
         CatObj.transform.localScale -= new Vector3(0.5f, 0.5f);
-        RegenerationWC = true;
+        FunctionStatistics.instance.loopWc = false;
     }
     public void EndRegeneration()
     {
-        RegenerationWC = false;
-
+        FunctionStatistics.instance.loopWc = true;
         CatObj.transform.position = BowlPosition.transform.position + new Vector3(0,35);
         CatObj.transform.localScale += new Vector3(0.5f, 0.5f);
     }
