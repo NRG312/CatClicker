@@ -28,11 +28,13 @@ public class GameManager : MonoBehaviour
 
     [Header("CatImage click Parameters")]
     public Button Image;
-    public bool CanClickOnCat;
+    [HideInInspector]public bool CanClickOnCat;
     
     [Header("OnClick Increase Money Parameters")]
-    [Range(0,1)]public float chanceforCrit;
+    [Range(0,1)] public float chanceforCrit;
     public float MultiplierCrit;
+    [HideInInspector] public bool DetectCrit;
+
     [HideInInspector]public float AmountOnClick = 0.5f;
     [HideInInspector]public float PassiveMoney;
     
@@ -67,13 +69,14 @@ public class GameManager : MonoBehaviour
     {
         if (Random.value > chanceforCrit)
         {
-            Debug.Log("Crit");
+            DetectCrit = true;
             Money += AmountOnClick * MultiplierCrit;
             GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
             
         }
         else
         {
+            DetectCrit = false;
             Money += AmountOnClick;
             GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
         }

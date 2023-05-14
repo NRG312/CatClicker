@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Banana
   m_EditorClassIdentifier: 
   ImageFood: {fileID: 21300000, guid: ae84f382cf1bf1447ac449c10e4320e8, type: 3}
-  ValueToIncrease: 10
+  ValueToIncrease: 4
   NameFood: Banana

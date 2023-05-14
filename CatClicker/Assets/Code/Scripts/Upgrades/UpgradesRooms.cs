@@ -20,7 +20,6 @@ public class UpgradesRooms : MonoBehaviour
     [Header("Texts Parameters")]
     [SerializeField] private string NameTxt;
     private TMP_Text Name;
-    [SerializeField] private string PriceTxt;
     private TMP_Text Price;
     void Start()
     {
@@ -33,9 +32,20 @@ public class UpgradesRooms : MonoBehaviour
         Name = transform.Find("Texts").transform.Find("Name").GetComponent<TMP_Text>();
         Name.text = NameTxt;
         Price = transform.Find("Texts").transform.Find("Price").GetComponent<TMP_Text>();
-        Price.text = PriceTxt;
-    }
 
+        Price.text = priceOfProduct.ToString();
+    }
+    private void Update()
+    {
+        if (GameManager.instance.Money >= priceOfProduct)
+        {
+            Price.color = Color.green;
+        }
+        else
+        {
+            Price.color = Color.red;
+        }
+    }
     private void BuyProduct()
     {
         if (GameManager.instance.Money >= priceOfProduct)

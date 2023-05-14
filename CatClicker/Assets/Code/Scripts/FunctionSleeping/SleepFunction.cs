@@ -42,6 +42,7 @@ public class SleepFunction : MonoBehaviour
         EarsSleep.sprite = EarsCat.sprite;
 
         FunctionStatistics.instance.loopSleep = false;
+        Swapping.instance.BlockSwap = true;
     }
     public void EndRegeneration()
     {
@@ -49,5 +50,6 @@ public class SleepFunction : MonoBehaviour
         SleepingCatObj.transform.gameObject.SetActive(false);
 
         FunctionStatistics.instance.loopSleep = true;
+        Swapping.instance.BlockSwap = false;
     }
 }

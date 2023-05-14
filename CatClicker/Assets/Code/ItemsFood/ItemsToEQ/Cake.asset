@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cake
   m_EditorClassIdentifier: 
   ImageFood: {fileID: 21300000, guid: 7b0bed617374c464ea589efd09a1ae83, type: 3}
-  ValueToIncrease: 0
+  ValueToIncrease: 7
   NameFood: Cake

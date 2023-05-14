@@ -30,4 +30,6 @@ public class NewBehaviourScript : MonoBehaviour
     //troche zmien rozdzialke tych imageow zarc w eq
     //Skonczylem wlasnie na upgradeach teraz posprawdzaj bugi i te inne przed wypuszczeniem demka 
     //dokoncz jedynie upgradey skillow
+    //jak kot korzysta z kibla albo spi wylacz mozliwosc swapowania pokoi
+    //ustaw aby aplikacja dzialala w tle w scripcie najlepiej gamemanager
 }

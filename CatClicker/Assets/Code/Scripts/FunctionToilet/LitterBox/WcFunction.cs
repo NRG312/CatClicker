@@ -19,12 +19,16 @@ public class WcFunction : MonoBehaviour
     {
         CatObj.transform.position = transform.position + new Vector3(20, 135);
         CatObj.transform.localScale -= new Vector3(0.5f, 0.5f);
+
         FunctionStatistics.instance.loopWc = false;
+        Swapping.instance.BlockSwap = true;
     }
     public void EndRegeneration()
     {
+        Swapping.instance.BlockSwap = false;
         FunctionStatistics.instance.loopWc = true;
-        CatObj.transform.position = BowlPosition.transform.position + new Vector3(0,35);
+
+        CatObj.transform.position = BowlPosition.transform.position + new Vector3(7,125);
         CatObj.transform.localScale += new Vector3(0.5f, 0.5f);
     }
 }

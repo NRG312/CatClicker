@@ -681,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -22996.834}
+  m_AnchoredPosition: {x: 0, y: -8228.898}
   m_SizeDelta: {x: 0.01, y: 2686.7239}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &16766751
@@ -1822,7 +1822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Strawberry
-  Price: 0
+  Price: 10
   food: {fileID: 11400000, guid: 022eea7bdd67ede4cb0d27b1634195d3, type: 2}
 --- !u!114 &128874500
 MonoBehaviour:
@@ -1963,12 +1963,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7400000, guid: f268630693cfafb4fa656ba66bc385c3, type: 2}
     - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
+      propertyPath: NameTxt
+      value: Ears 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: newImage
       value: 
       objectReference: {fileID: 21300000, guid: 0c973f35f43bedf4c88342010af6061d, type: 3}
     - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: TypeOfProduct
       value: Ears
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
+      propertyPath: typeOfProduct
+      value: Ears
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
+      propertyPath: priceOfProduct
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 1490041658526553722, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_Sprite
@@ -1996,7 +2008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2004,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2087,6 +2099,10 @@ PrefabInstance:
     - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: typeOfProduct
       value: WallToilet
+      objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 470
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
@@ -2931,6 +2947,7 @@ MonoBehaviour:
   CanClickOnCat: 0
   chanceforCrit: 0.95
   MultiplierCrit: 3
+  DetectCrit: 0
   AmountOnClick: 0.5
   PassiveMoney: 0
 --- !u!114 &210626834
@@ -2993,7 +3010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3001,7 +3018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3063,6 +3080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomsUpgrade (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
 --- !u!224 &211300596 stripped
@@ -3106,8 +3127,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -431, y: 0.000038624}
-  m_SizeDelta: {x: 147.9386, y: 136.408}
+  m_AnchoredPosition: {x: -428.81808, y: 3.5872}
+  m_SizeDelta: {x: 158.1208, y: 161.0375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212161036
 MonoBehaviour:
@@ -3432,8 +3453,8 @@ GameObject:
   - component: {fileID: 226344243}
   - component: {fileID: 226344245}
   - component: {fileID: 226344244}
-  - component: {fileID: 226344247}
   - component: {fileID: 226344246}
+  - component: {fileID: 226344247}
   m_Layer: 0
   m_Name: Beeding
   m_TagString: Untagged
@@ -4283,7 +4304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4291,7 +4312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4352,6 +4373,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -4939,7 +4964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4947,7 +4972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5008,6 +5033,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -5233,8 +5262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350949598
 MonoBehaviour:
@@ -5283,15 +5312,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7111,8 +7140,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457462314
 MonoBehaviour:
@@ -7161,15 +7190,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8126,7 +8155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &530654299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8204,7 +8233,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530654298}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -8437,7 +8466,7 @@ MonoBehaviour:
     m_Top: 27
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 17.48
+  m_Spacing: -1460.24
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -8861,7 +8890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Banana
-  Price: 0
+  Price: 30
   food: {fileID: 11400000, guid: 2a46b4d3fe72797429575ef1ff912e69, type: 2}
 --- !u!114 &561319032
 MonoBehaviour:
@@ -9346,8 +9375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599865752
 MonoBehaviour:
@@ -9396,15 +9425,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9489,6 +9518,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 282795848}
     m_Modifications:
+    - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
+      propertyPath: NameTxt
+      value: Ears 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
+      propertyPath: typeOfProduct
+      value: Ears
+      objectReference: {fileID: 0}
+    - target: {fileID: -2051122310287402987, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
+      propertyPath: priceOfProduct
+      value: 670
+      objectReference: {fileID: 0}
     - target: {fileID: 4149067032385973701, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_Name
       value: ApperanceUpgrade
@@ -9511,7 +9552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_AnchorMin.x
@@ -9519,7 +9560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4411156870821114254, guid: 4f999f76c57815a479a3db6a2eb42381, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10680,6 +10721,10 @@ PrefabInstance:
       propertyPath: typeOfProduct
       value: WallKitchen
       objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11488,7 +11533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Hamburger
-  Price: 0
+  Price: 70
   food: {fileID: 11400000, guid: 7f98240d58f186640b100958def28cc6, type: 2}
 --- !u!114 &766353162
 MonoBehaviour:
@@ -11653,7 +11698,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 781479161}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1240603020}
+        m_TargetAssemblyTypeName: GenerateNumbers, Assembly-CSharp
+        m_MethodName: GenerateNumberOnCat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &781479164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12851,7 +12908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -12859,7 +12916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -12920,6 +12977,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -13004,7 +13065,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
@@ -13022,6 +13083,7 @@ RectTransform:
   m_Children:
   - {fileID: 781479159}
   - {fileID: 2011086487}
+  - {fileID: 1240603019}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13048,6 +13110,10 @@ PrefabInstance:
     - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: typeOfProduct
       value: WallLivingRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
@@ -14432,8 +14498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929762584
 MonoBehaviour:
@@ -14482,15 +14548,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -16439,7 +16505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -16447,7 +16513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -16508,6 +16574,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -16827,6 +16897,10 @@ PrefabInstance:
     - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: typeOfProduct
       value: WallKitchen
+      objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
@@ -17217,6 +17291,10 @@ PrefabInstance:
     - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: typeOfProduct
       value: WallKitchen
+      objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
@@ -18050,7 +18128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -18058,7 +18136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -18119,6 +18197,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -18503,7 +18585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Cookie
-  Price: 0
+  Price: 20
   food: {fileID: 11400000, guid: b05c740dc9ed82b4bbf93ee1f3d9a039, type: 2}
 --- !u!114 &1158682580
 MonoBehaviour:
@@ -20037,7 +20119,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209551644}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -20086,6 +20168,7 @@ MonoBehaviour:
   Kitchen: {fileID: 2050830568}
   Arrowright: {fileID: 1147083378}
   Arrowleft: {fileID: 1542646207}
+  BlockSwap: 0
 --- !u!4 &1219861668
 Transform:
   m_ObjectHideFlags: 0
@@ -20125,13 +20208,13 @@ MonoBehaviour:
   loopHygiene: 1
   loopWc: 1
   loopSleep: 1
-  TimeHygiene: 6
-  AmountHygiene: 10
-  TimeWC: 4
+  TimeHygiene: 35
+  AmountHygiene: 3
+  TimeWC: 25
   AmountWC: 5
-  TimeHunger: 3
-  AmountHunger: 5
-  TimeSleep: 3
+  TimeHunger: 20
+  AmountHunger: 2
+  TimeSleep: 30
   AmountSleep: 4
 --- !u!1 &1233810252
 GameObject:
@@ -20317,6 +20400,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237097119}
   m_CullTransparentMesh: 1
+--- !u!1 &1240603018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1240603019}
+  - component: {fileID: 1240603020}
+  m_Layer: 5
+  m_Name: ClickNumbers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1240603019
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240603018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 865122166}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1240603020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240603018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444ab48b7c383cc46b655e5630fb0f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabNumbers: {fileID: 8424878611182718484, guid: 22c384361183a4944b5b3712db9d7c81, type: 3}
 --- !u!1001 &1255340571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20342,7 +20475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -20350,7 +20483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -20412,6 +20545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomsUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
 --- !u!224 &1255340572 stripped
@@ -20444,7 +20581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -20452,7 +20589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -20513,6 +20650,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -21254,7 +21395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -21262,7 +21403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -21323,6 +21464,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -21571,7 +21716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Candy
-  Price: 0
+  Price: 15
   food: {fileID: 11400000, guid: 37aa1aa275ea7744cac206f6ced35f25, type: 2}
 --- !u!114 &1342549413
 MonoBehaviour:
@@ -22131,7 +22276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Cake
-  Price: 0
+  Price: 45
   food: {fileID: 11400000, guid: 57679c62fbf2fd7468bd5db152e86dc5, type: 2}
 --- !u!114 &1392263798
 MonoBehaviour:
@@ -23306,6 +23451,10 @@ PrefabInstance:
     - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: typeOfProduct
       value: WallToilet
+      objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
@@ -26294,7 +26443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: HotDog
-  Price: 0
+  Price: 60
   food: {fileID: 11400000, guid: 18c620e66ec068e4ebeffb127c2c072a, type: 2}
 --- !u!114 &1631946801
 MonoBehaviour:
@@ -27079,8 +27228,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663689670
 MonoBehaviour:
@@ -27129,15 +27278,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -27381,7 +27530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -27389,7 +27538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -27450,6 +27599,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -28700,7 +28853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 548562460189186354, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -442.2131
+      value: -447.23138
       objectReference: {fileID: 0}
     - target: {fileID: 548562460189186354, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28714,13 +28867,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1937712403761434623, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
+      propertyPath: nameUpgrade
+      value: Passive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937712403761434623, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
+      propertyPath: whatWillGive
+      value: Passive+
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937712403761434623, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
+      propertyPath: typeOfUpgrade
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937712403761434623, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
+      propertyPath: passiveIncrease
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7513757784999094818, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
       propertyPath: m_Name
       value: SkillsUpgrade (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7513757784999094818, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
@@ -28961,6 +29130,10 @@ PrefabInstance:
     - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: typeOfProduct
       value: WallLivingRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
@@ -29824,7 +29997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Milk
-  Price: 0
+  Price: 25
   food: {fileID: 11400000, guid: c2ad9ba9e4e2edb40807f6ae915f8545, type: 2}
 --- !u!114 &1831491578
 MonoBehaviour:
@@ -30762,7 +30935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Namefood: Fries
-  Price: 0
+  Price: 55
   food: {fileID: 11400000, guid: ec68cc5453fd7a34194f67baa9153298, type: 2}
 --- !u!114 &1900588881
 MonoBehaviour:
@@ -31831,10 +32004,10 @@ RectTransform:
   m_Father: {fileID: 2050830565}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.7929077, y: -620}
-  m_SizeDelta: {x: -605.2275, y: -1988.5847}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.7929688, y: -631.3279}
+  m_SizeDelta: {x: 474.77252, y: 268.75928}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958043354
 MonoBehaviour:
@@ -33095,8 +33268,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: 7}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2017512889
 MonoBehaviour:
@@ -33145,15 +33318,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -33474,8 +33647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027919032
 MonoBehaviour:
@@ -33524,15 +33697,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -33775,6 +33948,10 @@ PrefabInstance:
       propertyPath: typeOfProduct
       value: WallLivingRoom
       objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -33973,7 +34150,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050830564}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -34270,8 +34447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078204885
 MonoBehaviour:
@@ -34320,15 +34497,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -34497,7 +34674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -34505,7 +34682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -34566,6 +34743,10 @@ PrefabInstance:
     - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Name
       value: RoomsUpgrade (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813024289369823697, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
@@ -34734,6 +34915,10 @@ PrefabInstance:
     - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: typeOfProduct
       value: WallToilet
+      objectReference: {fileID: 0}
+    - target: {fileID: -8426913154967761107, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
+      propertyPath: priceOfProduct
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8329438903351363768, guid: e2c55a88cff2b2d47bf8a2eeec448ff8, type: 3}
       propertyPath: m_Pivot.x
@@ -35087,8 +35272,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.99998, y: 6.999963}
-  m_SizeDelta: {x: 92.3134, y: 74.8508}
+  m_AnchoredPosition: {x: 229.9, y: -8.0861}
+  m_SizeDelta: {x: 176.1783, y: 171.3159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146146563
 MonoBehaviour:
@@ -35137,15 +35322,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 92.43
-  m_fontSizeBase: 92.43
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -35317,13 +35502,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1937712403761434623, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
+      propertyPath: nameUpgrade
+      value: Tap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937712403761434623, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
+      propertyPath: whatWillGive
+      value: Tap+
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937712403761434623, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
+      propertyPath: increaseOnTap
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7513757784999094818, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
       propertyPath: m_Name
       value: SkillsUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 7513757784999094818, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5fbede69c884244dbbe1306bf8b7bfc, type: 3}

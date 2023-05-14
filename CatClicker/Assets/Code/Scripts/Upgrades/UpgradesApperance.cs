@@ -9,16 +9,14 @@ public class UpgradesApperance : MonoBehaviour
     [Header("Main Parameters")]
     [SerializeField] private AnimationClip Clip;
     [SerializeField] private Sprite newImage;
-    [SerializeField] private string TypeOfProduct;
-    [SerializeField] private float PriceOfProduct;
+    [SerializeField] private string typeOfProduct;
+    [SerializeField] private float priceOfProduct;
     //UI Buttons in Upgrade
     private Button selectButton;
     private Button buyButton;
     [Header("Texts In Upgrade")]
     [SerializeField] private string NameTxt;
     private TMP_Text Name;
-
-    [SerializeField] private string PriceTxt;
     private TMP_Text Price;
 
     private void Start()
@@ -32,19 +30,31 @@ public class UpgradesApperance : MonoBehaviour
         Name = transform.Find("Texts").transform.Find("Name").GetComponent<TMP_Text>();
         Name.text = NameTxt;
         Price = transform.Find("Texts").transform.Find("Price").GetComponent<TMP_Text>();
-        Price.text = PriceTxt;
+
+        Price.text = priceOfProduct.ToString();
+    }
+    private void Update()
+    {
+        if (GameManager.instance.Money >= priceOfProduct)
+        {
+            Price.color = Color.green;
+        }
+        else
+        {
+            Price.color = Color.red;
+        }
     }
     private void BuyProduct()
     {
-        if (GameManager.instance.Money >= PriceOfProduct)
+        if (GameManager.instance.Money >= priceOfProduct)
         {
-            GameManager.instance.BuyProduct(PriceOfProduct);
+            GameManager.instance.BuyProduct(priceOfProduct);
             selectButton.gameObject.SetActive(true);
         }
     }
     private void SelectProduct()
     {
-        CustomizationGame.instance.ChangeApperanceCat(newImage, TypeOfProduct);
-        AnimationsManagerCat.instance.ChangeAnimationClipOnClick(Clip, TypeOfProduct);
+        CustomizationGame.instance.ChangeApperanceCat(newImage, typeOfProduct);
+        AnimationsManagerCat.instance.ChangeAnimationClipOnClick(Clip, typeOfProduct);
     }
 }

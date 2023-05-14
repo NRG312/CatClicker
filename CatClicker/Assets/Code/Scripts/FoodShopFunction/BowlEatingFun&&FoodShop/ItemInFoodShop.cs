@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class ItemInFoodShop : MonoBehaviour
 {
     [Header("Name Food")]
-    public string Namefood;
+    [SerializeField]private string Namefood;
     private TMP_Text namefood;
-    /*[Header("Image Food")]
-    public Sprite ImageFood;*/
+
     [Header("PriceFood")]
     public float Price;
     private TMP_Text price;
+
     [Header("Item Food")]
     public Food food;
 
@@ -36,7 +36,14 @@ public class ItemInFoodShop : MonoBehaviour
 
     void Update()
     {
-        
+        if (GameManager.instance.Money >= Price)
+        {
+            price.color = Color.green;
+        }
+        else
+        {
+            price.color = Color.red;
+        }
     }
 
     private void BuyProduct()
@@ -44,6 +51,7 @@ public class ItemInFoodShop : MonoBehaviour
         if (Price <= GameManager.instance.Money)
         {
             BowlEQ.instance.AddItemInList(food);
+            GameManager.instance.BuyProduct(Price);
         }
     }
 }
