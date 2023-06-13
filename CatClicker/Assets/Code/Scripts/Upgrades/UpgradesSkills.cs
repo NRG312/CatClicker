@@ -18,16 +18,21 @@ public class UpgradesSkills : MonoBehaviour
     private TMP_Text WhatWillGive;
 
     [Header("Price")]
-    [SerializeField] private float Price = 5f;//
-    //[SerializeField] private float MultiplierPrice;//
+    [SerializeField] private float mainPrice = 0.5f;
+    [SerializeField] private float firstVariable;
+    [SerializeField] private float secondVariable = 0.7f;
+    private float Price = 5f;
     private TMP_Text PriceTxt;
+
+
+
     [Header("UpgradesOnTap")]
     [SerializeField] private float increaseOnTap;//
     [Header("PassiveUpgrades")]
     [SerializeField] private float passiveIncrease;//
     //Amount
     private TMP_Text AmountTxt;
-    private int ActualAmount;//
+    private int ActualAmount = 1;//
 
     void Start()
     {
@@ -57,9 +62,8 @@ public class UpgradesSkills : MonoBehaviour
     }
     private void RefreshUI()
     {
-        PriceTxt.text = "Price " + Price.ToString("F2");
+        PriceTxt.text = Price.ToString("F2");
         AmountTxt.text = ActualAmount.ToString();
-
         if (typeOfUpgrade == TypeOfUpgrade.OnTap)
         {
             WhatWillGive.text = whatWillGive + " " + increaseOnTap.ToString("F2");
@@ -108,47 +112,17 @@ public class UpgradesSkills : MonoBehaviour
     }
     private void IncreasePrice()
     {
-        /*MultiplierPrice += 0.15f;
-        float increaseprice = Price * MultiplierPrice;
-        Price += increaseprice;*/
-
         if (typeOfUpgrade == TypeOfUpgrade.OnTap)
         {
-            if (Price < 100)
-            {
-                float increaseprice = Price * 2;
-                Price += increaseprice;
-            }
-            else if (Price < 500)
-            {
-                float increaseprice = Price * 0.9f;
-                Price += increaseprice;
-            }
-            else if (Price < 1500)
-            {
-                float increaseprice = Price * 0.4f;
-                Price += increaseprice;
-            }
+            float amountIncrease = mainPrice * firstVariable * ActualAmount * secondVariable;
+            Price += amountIncrease;
         }
 
 
         if (typeOfUpgrade == TypeOfUpgrade.Passive)
         {
-            if (Price < 100)
-            {
-                float increaseprice = Price * 5;
-                Price += increaseprice;
-            }
-            else if (Price < 500)
-            {
-                float increaseprice = Price * 3;
-                Price += increaseprice;
-            }
-            else if (Price < 1500)
-            {
-                float increaseprice = Price * 1.5f;
-                Price += increaseprice;
-            }
+            float amountIncrease = mainPrice * firstVariable * ActualAmount * secondVariable;
+            Price += amountIncrease;
         }
 
     }

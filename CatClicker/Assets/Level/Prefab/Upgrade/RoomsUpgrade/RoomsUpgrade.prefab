@@ -387,8 +387,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 111.98
-  m_fontSizeBase: 111.98
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -721,7 +721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231.90674, y: -5.122}
+  m_AnchoredPosition: {x: -228, y: -61.39}
   m_SizeDelta: {x: 275.8355, y: 214.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4628405590117344380
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ecc22b30593aa2646bc948ea6c632328, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfUpgrade: 0
-  Image: {fileID: 0}
-  typeOfProduct: 
-  NameTxt: 
-  PriceTxt: 
+  Image: {fileID: 21300000, guid: ecc22b30593aa2646bc948ea6c632328, type: 3}
+  typeOfProduct: WallKitchen
+  priceOfProduct: 400
+  NameTxt: Wall Kitchen

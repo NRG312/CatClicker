@@ -10,19 +10,19 @@ public class GameManager : MonoBehaviour
 
     [Header("Money Parameters")]
     public TMP_Text TextMoney;
-    private float ActualMoney = 0;
+    private float actualMoney = 0;
     public float Money
     {
-        get { return ActualMoney; }
+        get { return actualMoney; }
         set
         {
             if (value < 0)
             {
                 Debug.Log("Not Enough Money");
-                value = ActualMoney;
+                value = actualMoney;
             }
             TextMoney.text = Money.ToString("F1");
-            ActualMoney = value;
+            actualMoney = value;
         }
     }
 
@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
     
     [Header("OnClick Increase Money Parameters")]
     [Range(0,1)] public float chanceforCrit;
-    public float MultiplierCrit;
-    [HideInInspector] public bool DetectCrit;
+    public float multiplierCrit;
+    [HideInInspector] public bool detectCrit;
 
     [HideInInspector]public float AmountOnClick = 0.5f;
-    [HideInInspector]public float PassiveMoney;
+    [HideInInspector]public float passiveMoney;
     
     private void RefreshUI()
     {
@@ -69,14 +69,14 @@ public class GameManager : MonoBehaviour
     {
         if (Random.value > chanceforCrit)
         {
-            DetectCrit = true;
-            Money += AmountOnClick * MultiplierCrit;
+            detectCrit = true;
+            Money += AmountOnClick * multiplierCrit;
             GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
             
         }
         else
         {
-            DetectCrit = false;
+            detectCrit = false;
             Money += AmountOnClick;
             GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
         }
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     public void BuyUpgradesPassive(float Price,float Amount)
     {
         Money -= Price;
-        PassiveMoney += Amount;
+        passiveMoney += Amount;
         RefreshUI();
     }
     //
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         while (s == true)
         {
             yield return new WaitForSeconds(1);
-            Money += PassiveMoney;
+            Money += passiveMoney;
             RefreshUI();
         }
     }

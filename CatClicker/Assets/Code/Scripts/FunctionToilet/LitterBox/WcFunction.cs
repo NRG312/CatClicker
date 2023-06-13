@@ -21,11 +21,11 @@ public class WcFunction : MonoBehaviour
         CatObj.transform.localScale -= new Vector3(0.5f, 0.5f);
 
         FunctionStatistics.instance.loopWc = false;
-        Swapping.instance.BlockSwap = true;
+        Swapping.instance.blockSwap = true;
     }
     public void EndRegeneration()
     {
-        Swapping.instance.BlockSwap = false;
+        Swapping.instance.blockSwap = false;
         FunctionStatistics.instance.loopWc = true;
 
         CatObj.transform.position = BowlPosition.transform.position + new Vector3(7,125);

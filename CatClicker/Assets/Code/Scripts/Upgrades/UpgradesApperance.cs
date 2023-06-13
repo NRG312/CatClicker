@@ -14,7 +14,7 @@ public class UpgradesApperance : MonoBehaviour
     //UI Buttons in Upgrade
     private Button selectButton;
     private Button buyButton;
-    [Header("Texts In Upgrade")]
+    [Header("Name Of Upgrade")]
     [SerializeField] private string NameTxt;
     private TMP_Text Name;
     private TMP_Text Price;
@@ -54,7 +54,22 @@ public class UpgradesApperance : MonoBehaviour
     }
     private void SelectProduct()
     {
-        CustomizationGame.instance.ChangeApperanceCat(newImage, typeOfProduct);
-        AnimationsManagerCat.instance.ChangeAnimationClipOnClick(Clip, typeOfProduct);
+        if (newImage == null)
+        {
+            TakeOffProduct();
+        }
+        else
+        {
+            CustomizationGame.instance.ChangeApperanceCat(newImage, typeOfProduct);
+            if (Clip != null)
+            {
+                AnimationsManagerCat.instance.ChangeAnimationClipOnClick(Clip, typeOfProduct);
+            }
+        }
+    }
+
+    private void TakeOffProduct()
+    {
+        CustomizationGame.instance.TakeOffApperanceItem(typeOfProduct);
     }
 }

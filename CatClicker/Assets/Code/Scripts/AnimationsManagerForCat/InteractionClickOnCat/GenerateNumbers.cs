@@ -10,9 +10,9 @@ public class GenerateNumbers : MonoBehaviour
     public void GenerateNumberOnCat()
     {
         Instantiate(prefabNumbers, Input.mousePosition, Quaternion.identity, transform);
-        if (GameManager.instance.DetectCrit == true)
+        if (GameManager.instance.detectCrit == true)
         {
-            float CritAmount = GameManager.instance.AmountOnClick * GameManager.instance.MultiplierCrit;
+            float CritAmount = GameManager.instance.AmountOnClick * GameManager.instance.multiplierCrit;
             prefabNumbers.GetComponent<TMP_Text>().text = "Critical " + CritAmount.ToString("F2");
             prefabNumbers.GetComponent<TMP_Text>().color = Color.red;
         }

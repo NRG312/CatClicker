@@ -9,6 +9,16 @@ public class CreatingSoapBubbles : MonoBehaviour, IPointerDownHandler
     public GameObject Bubbles;
     public List<GameObject> bubbles = new List<GameObject>();
 
+    private GameObject corner1;
+    private GameObject corner2;
+    private GameObject corner3;
+
+    private void Awake()
+    {
+        corner1 = GameObject.Find("Corner1");
+        corner2 = GameObject.Find("Corner2");
+        corner3 = GameObject.Find("Corner3");
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
         Instantiate(SoapPrefab, GameObject.Find("CatImageUI").transform);
@@ -31,7 +41,8 @@ public class CreatingSoapBubbles : MonoBehaviour, IPointerDownHandler
         }
         if (time >= 0.6)
         {
-            Vector2 CreateRandomBubbles = new Vector2(Random.Range(459, 700), Random.Range(1117, 1650));
+            Vector2 CreateRandomBubbles = new Vector2(Random.Range(corner1.transform.position.x, corner2.transform.position.x), Random.Range(corner1.transform.position.y,corner3.transform.position.y));
+
             GameObject bubble = Instantiate(Bubbles, CreateRandomBubbles, Quaternion.identity, GameObject.Find("CatImageUI").transform);
             bubbles.Add(bubble);
             time = 0;

@@ -9,6 +9,9 @@ public class CustomizationGame : MonoBehaviour
 
     [Header("CatImages")]
     public Image Ears;
+    public Image Glasses;
+    public Image Collars;
+    public Image Hats;
    // public Image Mouth;
 
     [Header("LivingRoom")]
@@ -35,6 +38,46 @@ public class CustomizationGame : MonoBehaviour
         if (type == "Ears")
         {
             Ears.sprite = image;
+        }
+        else if (type == "Hat")
+        {
+            if (!Hats.gameObject.activeInHierarchy)
+            {
+                Hats.gameObject.SetActive(true);
+            }
+            Hats.sprite = image;
+        }
+        else if (type == "Collar")
+        {
+            if (!Collars.gameObject.activeInHierarchy)
+            {
+                Collars.gameObject.SetActive(true);
+            }
+            Collars.sprite = image;
+        }
+        else if (type == "Glasses")
+        {
+            if (!Glasses.gameObject.activeInHierarchy)
+            {
+                Glasses.gameObject.SetActive(true);
+            }
+            Glasses.sprite = image;
+        }
+        
+    }
+    public void TakeOffApperanceItem(string type)
+    {
+        if (type == "Hat")
+        {          
+            Hats.gameObject.SetActive(false);           
+        }
+        else if (type == "Collar")
+        {         
+            Collars.gameObject.SetActive(false);          
+        }
+        else if (type == "Glasses")
+        {
+            Glasses.gameObject.SetActive(false);          
         }
     }
 

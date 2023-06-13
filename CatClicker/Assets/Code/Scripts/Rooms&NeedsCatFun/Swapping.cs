@@ -19,15 +19,15 @@ public class Swapping : MonoBehaviour
 
 
     [Header("Arrows To Swap Rooms")]
-    public Button Arrowright;
-    public Button Arrowleft;
+    public Button arrowRight;
+    public Button arrowLeft;
 
     //On click Buttons left & right
-    private bool SwapRight;
-    private bool SwapLeft;
+    private bool swapRight;
+    private bool swapLeft;
 
     //Block Swap Bool
-    [HideInInspector]public bool BlockSwap;
+    [HideInInspector]public bool blockSwap;
 
     
 
@@ -35,64 +35,64 @@ public class Swapping : MonoBehaviour
     {
         instance = this;
 
-        Arrowleft.onClick.AddListener(ArrowLeft);
-        Arrowright.onClick.AddListener(ArrowRight);
+        arrowLeft.onClick.AddListener(ArrowLeft);
+        arrowRight.onClick.AddListener(ArrowRight);
     }
 
 
     //Swapping
     public void ArrowRight()
     {
-        if (SwapRight == false && BlockSwap == false)
+        if (swapRight == false && blockSwap == false)
         {
-            if (LivingRoom.enabled == true)
+            if (LivingRoom.gameObject.activeInHierarchy)
             {
                 GameManager.instance.CanClickOnCat = false;
-                Toilet.enabled = true;
-                LivingRoom.enabled = false;
-                Kitchen.enabled = false;
+                Toilet.gameObject.SetActive(true);
+                LivingRoom.gameObject.SetActive(false);
+                Kitchen.gameObject.SetActive(false);
             }
-            else if (Toilet.enabled == true)
+            else if (Toilet.gameObject.activeInHierarchy)
             {
                 GameManager.instance.CanClickOnCat = false;
-                Kitchen.enabled = true;
-                Toilet.enabled = false;
-                LivingRoom.enabled = false;
+                Kitchen.gameObject.SetActive(true);
+                Toilet.gameObject.SetActive(false);
+                LivingRoom.gameObject.SetActive(false);
             }
-            else if (Kitchen.enabled == true)
+            else if (Kitchen.gameObject.activeInHierarchy)
             {
                 GameManager.instance.CanClickOnCat = true;
-                LivingRoom.enabled = true;
-                Kitchen.enabled = false;
-                Toilet.enabled = false;
+                LivingRoom.gameObject.SetActive(true);
+                Kitchen.gameObject.SetActive(false);
+                Toilet.gameObject.SetActive(false);
             }
-            
+
         }
     }
     public void ArrowLeft()
     {
-        if (SwapLeft == false && BlockSwap == false)
+        if (swapLeft == false && blockSwap == false)
         {
-            if (LivingRoom.enabled == true)
+            if (LivingRoom.gameObject.activeInHierarchy)
             {
                 GameManager.instance.CanClickOnCat = false;
-                Kitchen.enabled = true;
-                Toilet.enabled = false;
-                LivingRoom.enabled = false;
+                Kitchen.gameObject.SetActive(true);
+                Toilet.gameObject.SetActive(false);
+                LivingRoom.gameObject.SetActive(false);
             }
-            else if (Kitchen.enabled == true)
+            else if (Kitchen.gameObject.activeInHierarchy)
             {
                 GameManager.instance.CanClickOnCat = false;
-                Toilet.enabled = true;
-                Kitchen.enabled = false;
-                LivingRoom.enabled = false;
+                Toilet.gameObject.SetActive(true);
+                Kitchen.gameObject.SetActive(false);
+                LivingRoom.gameObject.SetActive(false);
             }
-            else if (Toilet.enabled == true)
+            else if (Toilet.gameObject.activeInHierarchy)
             {
                 GameManager.instance.CanClickOnCat = true;
-                LivingRoom.enabled = true;
-                Kitchen.enabled = false;
-                Toilet.enabled = false;
+                LivingRoom.gameObject.SetActive(true);
+                Kitchen.gameObject.SetActive(false);
+                Toilet.gameObject.SetActive(false);
             }
         }
     }

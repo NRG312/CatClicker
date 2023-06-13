@@ -351,10 +351,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Clip: {fileID: 7400000, guid: a7e650145736e0c4ca0f11f3d8a5349a, type: 2}
   newImage: {fileID: 21300000, guid: 53a09543ecf8a5d47acd63189d452174, type: 3}
-  TypeOfProduct: Ears
-  PriceOfProduct: 0
-  NameTxt: 
-  PriceTxt: 
+  typeOfProduct: Ears
+  priceOfProduct: 670
+  NameTxt: Ears 1
 --- !u!1 &5684907951863142831
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +416,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -761,8 +760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155.10379, y: -30.3504}
-  m_SizeDelta: {x: 222.2076, y: 160.7008}
+  m_AnchoredPosition: {x: 153.17422, y: -30.3504}
+  m_SizeDelta: {x: 245.3629, y: 160.7008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5746019939909586976
 CanvasRenderer:
@@ -819,8 +818,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75.59
-  m_fontSizeBase: 75.59
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
