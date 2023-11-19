@@ -22,7 +22,7 @@ public class SleepFunction : MonoBehaviour
     {
         if (FunctionStatistics.instance.loopSleep == false)
         {
-            GameObject.Find("RoomsController").GetComponent<FunctionStatistics>().SleepFunction();
+            FunctionStatistics.instance.SleepFunction();
         }
     }
     public void StartRegeneration()

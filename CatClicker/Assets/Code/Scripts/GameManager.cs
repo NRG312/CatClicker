@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -9,19 +11,34 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [Header("Money Parameters")]
-    public TMP_Text TextMoney;
+    public TMP_Text textMoney;
     private float actualMoney = 0;
     public float Money
     {
         get { return actualMoney; }
-        set
+        private set 
         {
             if (value < 0)
             {
                 Debug.Log("Not Enough Money");
                 value = actualMoney;
             }
-            TextMoney.text = Money.ToString("F1");
+            // Convert Big Numbers
+            if (value < 1000)
+            {
+                textMoney.text = Money.ToString("F1");
+            }
+            else if (value < 1000000)
+            {
+                float number = Money / 1000;
+                textMoney.text = number.ToString("F1") + "K";
+            }
+            else if (value < 1000000000)
+            {
+                float number = Money / 1000000;
+                textMoney.text = number.ToString("F1") + "M";
+            }
+            //
             actualMoney = value;
         }
     }
@@ -35,13 +52,9 @@ public class GameManager : MonoBehaviour
     public float multiplierCrit;
     [HideInInspector] public bool detectCrit;
 
-    [HideInInspector]public float AmountOnClick = 0.5f;
-    [HideInInspector]public float passiveMoney;
+    [HideInInspector] public float AmountOnClick = 0.5f;
+    [HideInInspector] public float passiveMoney;
     
-    private void RefreshUI()
-    {
-        TextMoney.text = Money.ToString("F1");
-    }
     void Start()
     {
         instance = this;
@@ -52,19 +65,7 @@ public class GameManager : MonoBehaviour
         Image.onClick.AddListener(MoneyGrowthOnClick);
     }
 
-    //Checking Image cat interactable
-    private void Update()
-    {
-        if (CanClickOnCat == true)
-        {
-            Image.interactable = true;
-        }
-        else
-        {
-            Image.interactable = false;
-        }
-    }
-    //On Click Money Growth and Turning Animation Cat
+    //MoneyFuntions
     public void MoneyGrowthOnClick()
     {
         if (Random.value > chanceforCrit)
@@ -81,36 +82,45 @@ public class GameManager : MonoBehaviour
             GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
         }
     }
+    private IEnumerator PassiveGrowth()
+    {
+        bool isPassiveOn = true;
+        while (isPassiveOn == true)
+        {
+            yield return new WaitForSeconds(1);
+            Money += passiveMoney;
+        }
+    }
+    //
+    //Checking Image cat interactable
+    private void Update()
+    {
+        if (CanClickOnCat == true)
+        {
+            Image.interactable = true;
+        }
+        else
+        {
+            Image.interactable = false;
+        }
+    }
     //Functions To buy upgrades from Upgrades Script
     public void BuyUpgradesOnTap(float Price,float Amount)
     {
         Money -= Price;
         AmountOnClick += Amount;
-        RefreshUI();
     }
     public void BuyUpgradesPassive(float Price,float Amount)
     {
         Money -= Price;
         passiveMoney += Amount;
-        RefreshUI();
     }
     //
-    private IEnumerator PassiveGrowth()
-    {
-        bool s = true;
-        while (s == true)
-        {
-            yield return new WaitForSeconds(1);
-            Money += passiveMoney;
-            RefreshUI();
-        }
-    }
 
     //Buying Products
     public void BuyProduct(float Price)
     {
         Money -= Price;
-        RefreshUI();
     }
 
 }

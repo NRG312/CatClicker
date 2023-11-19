@@ -90,17 +90,17 @@ public class FunctionStatistics : MonoBehaviour
         
     }
 
-    float timekeeperHygiene;
+    float _timekeeperHygiene;
     public void HygieneFunction(int Increase)
     {
         if (hygiene < 100) //pomysl potem nad tym zeby zrobic gladkie zwiekszanie higieny
         {
-            timekeeperHygiene += Time.deltaTime;
-            if (timekeeperHygiene >= 0.3f)
+            _timekeeperHygiene += Time.deltaTime;
+            if (_timekeeperHygiene >= 0.3f)
             {
                 hygiene += Increase;
                 RefreshUI();
-                timekeeperHygiene = 0;
+                _timekeeperHygiene = 0;
             }
         }
     }
@@ -121,19 +121,19 @@ public class FunctionStatistics : MonoBehaviour
         }
     }
 
-    float TimeKeeperWc;
+    float _timeKeeperWc;
     public void WCFunction()
     {
         if (wc < 100)
         {
             loopWc = false;
-            TimeKeeperWc += Time.deltaTime;
+            _timeKeeperWc += Time.deltaTime;
 
-            if (TimeKeeperWc >= 0.2f)
+            if (_timeKeeperWc >= 0.2f)
             {
                 wc += 1;
                 RefreshUI();
-                TimeKeeperWc = 0;
+                _timeKeeperWc = 0;
             }
             if (wc >= 100)
             {
@@ -187,19 +187,19 @@ public class FunctionStatistics : MonoBehaviour
         }
     }
 
-    float timeKeeperSleep;
+    float _timeKeeperSleep;
     public void SleepFunction()
     {
         if (sleep < 100)
         {
             loopSleep = false;
-            timeKeeperSleep += Time.deltaTime;
+            _timeKeeperSleep += Time.deltaTime;
 
-            if (timeKeeperSleep >= 0.2f)
+            if (_timeKeeperSleep >= 0.2f)
             {
                 sleep += 1;
                 RefreshUI();
-                timeKeeperSleep = 0;
+                _timeKeeperSleep = 0;
             }
             if (sleep >= 100)
             {
