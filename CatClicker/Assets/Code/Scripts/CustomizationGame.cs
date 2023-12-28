@@ -97,7 +97,7 @@ public class CustomizationGame : MonoBehaviour
             ChangeToilet(image, Type);
         }
     }
-    public void ChangeLivingRoom(Sprite image, string Type)
+    private void ChangeLivingRoom(Sprite image, string Type)
     {
         if (Type == "WallLivingRoom")
         {
@@ -109,7 +109,7 @@ public class CustomizationGame : MonoBehaviour
         }
 
     }
-    public void ChangeKitchen(Sprite image, string Type)
+    private void ChangeKitchen(Sprite image, string Type)
     {
         if (Type == "WallKitchen")
         {
@@ -120,7 +120,7 @@ public class CustomizationGame : MonoBehaviour
             FloorKitchen.sprite = image;
         }
     }
-    public void ChangeToilet(Sprite image, string Type)
+    private void ChangeToilet(Sprite image, string Type)
     {
         if (Type == "WallToilet")
         {

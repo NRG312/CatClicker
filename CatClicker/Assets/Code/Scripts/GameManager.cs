@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour
         
         //Image cat to click to money growth
         Image.onClick.AddListener(MoneyGrowthOnClick);
+        
+        //Load data Skills
+        LoadSaveData();
     }
 
     //MoneyFuntions
@@ -95,6 +98,10 @@ public class GameManager : MonoBehaviour
     //Checking Image cat interactable
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            PlayerPrefs.DeleteAll();
+        }
         if (CanClickOnCat == true)
         {
             Image.interactable = true;
@@ -116,7 +123,15 @@ public class GameManager : MonoBehaviour
         passiveMoney += Amount;
     }
     //
-
+    //Load data from UpgradeSkills
+    private void LoadSaveData()
+    {
+        float amountClick = PlayerPrefs.GetInt("OnClickUpgrade");
+        float amountPassive = PlayerPrefs.GetInt("PassiveUpgrade");
+        
+        AmountOnClick += amountClick;
+        passiveMoney += amountPassive;
+    }
     //Buying Products
     public void BuyProduct(float Price)
     {

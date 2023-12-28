@@ -34,6 +34,12 @@ public class UpgradesRooms : MonoBehaviour
         Price = transform.Find("Texts").transform.Find("Price").GetComponent<TMP_Text>();
 
         Price.text = priceOfProduct.ToString();
+        
+        //load data
+        if (PlayerPrefs.GetInt(gameObject.name) == 1)
+        {
+            selectButton.gameObject.SetActive(true);
+        }
     }
     private void Update()
     {
@@ -52,6 +58,7 @@ public class UpgradesRooms : MonoBehaviour
         {
             GameManager.instance.BuyProduct(priceOfProduct);
             selectButton.gameObject.SetActive(true);
+            PlayerPrefs.SetInt(gameObject.name,1);
         }
     }
     private void SelectProduct()
@@ -59,10 +66,6 @@ public class UpgradesRooms : MonoBehaviour
         if (typeOfUpgrade == TypeOfUpgrade.Wall)
         {
             CustomizationGame.instance.CheckingTypeOfProduct(Image, typeOfProduct);
-        }
-        else if (typeOfUpgrade == TypeOfUpgrade.Floor)
-        {
-
         }
     }
 }
