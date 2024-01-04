@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 { 
-    //skonczylem robic na zapisach upgreadow wszystkich teraz jeszcze zrobic GameData ale pomysl jeszcze jak to zrobic
+    //skonczylem robic na zapisach wartosci w grze
+    //zrob zapis zarcia w eq
     //potem zrob animacje kota jak je
     //pozniej trzeba dodac dzwieki do gry ale to jak tamci cos znajda
     //pomysl nad powiekszeniem kota ale wtedy musisz pozmieniac w kojcu i litterboxie pamietaj
