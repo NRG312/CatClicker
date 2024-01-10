@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public float Money
     {
         get { return actualMoney; }
-        private set 
+        set 
         {
             if (value < 0)
             {
@@ -52,8 +52,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float passiveMoney;
     
     //Data Values
-    float timeSave;
-    bool firstSave;
+    private float _timeSave;
+    private bool _firstSave;
     //
     void Start()
     {
@@ -63,14 +63,6 @@ public class GameManager : MonoBehaviour
         
         //Image cat to click to money growth
         Image.onClick.AddListener(MoneyGrowthOnClick);
-        
-        //Checking first save in Game
-        if (PlayerPrefs.GetInt("FirstSave") == 1)
-        {
-            firstSave = true;
-        }
-        //Load data
-        LoadSaveData();
     }
 
     //MoneyFuntions
@@ -117,13 +109,6 @@ public class GameManager : MonoBehaviour
         {
             Image.interactable = false;
         }
-        //Save Game
-        timeSave += Time.deltaTime;
-        if (timeSave >= 3)
-        {
-            SaveData();
-            timeSave = 0;
-        }
     }
     //Functions To buy upgrades from Upgrades Script
     public void BuyUpgradesOnTap(float Price,float Amount)
@@ -141,48 +126,6 @@ public class GameManager : MonoBehaviour
     {
         Money -= Price;
     }
-    //
-    //Load data
-    private void LoadSaveData()
-    {
-        if (firstSave)
-        {
-            //Upgrades
-            float amountClick = PlayerPrefs.GetInt("OnClickUpgrade");
-            float amountPassive = PlayerPrefs.GetInt("PassiveUpgrade");
-            //
-            //Main Values
-            float _money = PlayerPrefs.GetFloat("Money");
-            //float _premiumMoney = PlayerPrefs.GetFloat("PremiumMoney");
-            //
-            //Stats Values
-            int _sleep = PlayerPrefs.GetInt("Sleep");
-            int _hunger = PlayerPrefs.GetInt("Hunger");
-            int _wc = PlayerPrefs.GetInt("WC");
-            int _hygiene = PlayerPrefs.GetInt("Hygiene");
-            FindObjectOfType<FunctionStatistics>().LoadSavedStats(_sleep,_hunger,_wc,_hygiene);
-            //
-            //Refresh Values
-            amountOnClick += amountClick;
-            passiveMoney += amountPassive;
-            Money = _money;
-            //
-        }
-        
-    }
-    //Save data
-    private void SaveData()
-    {
-        if (firstSave == false)
-        {
-            PlayerPrefs.SetInt("FirstSave",1);
-        }
-        
-        PlayerPrefs.SetFloat("Money",Money);
-        PlayerPrefs.SetInt("Sleep",FunctionStatistics.instance.sleep);
-        PlayerPrefs.SetInt("Hunger",FunctionStatistics.instance.hunger);
-        PlayerPrefs.SetInt("WC",FunctionStatistics.instance.wc);
-        PlayerPrefs.SetInt("Hygiene",FunctionStatistics.instance.hygiene);
-    }
-    //
+    
+    
 }

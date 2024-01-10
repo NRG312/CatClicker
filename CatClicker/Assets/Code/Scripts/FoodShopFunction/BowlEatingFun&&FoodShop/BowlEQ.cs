@@ -20,7 +20,7 @@ public class BowlEQ : MonoBehaviour
     {
         CreateItemInEQ(item);
     }
-    private void CreateItemInEQ(Food item)
+    public void CreateItemInEQ(Food item)
     {
         for (int i = 0; i < Slots.Length; i++)
         {
