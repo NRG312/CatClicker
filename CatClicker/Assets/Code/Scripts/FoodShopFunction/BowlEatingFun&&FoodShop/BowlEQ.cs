@@ -6,11 +6,18 @@ using TMPro;
 
 public class BowlEQ : MonoBehaviour
 {
+    private Dictionary<Food, int> inventory = new Dictionary<Food, int>();
     public static BowlEQ instance;
 
     public GameObject[] Slots;
     [Header("ToCreateItemInEQ")]
     public GameObject Itemprefab;
+
+    #region Properties
+
+    public Dictionary<Food, int> GetInventory => inventory;
+    
+    #endregion
     void Start()
     {
         instance = this;
