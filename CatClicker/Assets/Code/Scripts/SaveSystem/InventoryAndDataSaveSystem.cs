@@ -12,7 +12,7 @@ public class InventoryAndDataSaveSystem : MonoBehaviour
     private bool _firstSave;
     //
     //Inventory FoodShop Values
-    private static Dictionary<Food, int> allItemCodes = new Dictionary<Food, int>();
+    private static Dictionary<int, Food> allItemCodes = new Dictionary<int, Food>();
     private static int HashItem(Food item) => Animator.StringToHash(item.NameFood);
     private static string filePath = "Null";
     private const string split_char = "_";
@@ -35,25 +35,18 @@ public class InventoryAndDataSaveSystem : MonoBehaviour
         }
         //Load data
         LoadSaveData();
+        LoadInventory();
     }
 
     private void Update()
     {
         //Save Game
         _timeSave += Time.deltaTime;
-        if (_timeSave >= 3)
+        if (_timeSave >= 1)
         {
             SaveData();
-            _timeSave = 0;
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
             SaveInventory();
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            LoadInventory();
+            _timeSave = 0;
         }
     }
 
@@ -108,18 +101,37 @@ public class InventoryAndDataSaveSystem : MonoBehaviour
         foreach (Food i in allItems)
         {
             int key = HashItem(i);
-            /*if (!allItemCodes.ContainsKey(key))
+            if (!allItemCodes.ContainsKey(key))
             {
                 allItemCodes.Add(key,i);
-            }*/
+            }
         }
     }
 
-    internal void SaveInventory()
+    
+    private bool InventorySaveExists() 
+    {
+        if (!File.Exists(filePath))
+        {
+            Debug.LogWarning("The file you're trying to access doesn't exist.");
+            return false;
+        }
+        return true;
+    }
+
+    private void ClearInventorySaveFile()
+    {
+        if (!InventorySaveExists())
+            return;
+
+        File.WriteAllText(filePath, "");
+    }
+
+    private void SaveInventory()
     {
         using (StreamWriter sw = new StreamWriter(filePath))
         {
-            foreach (KeyValuePair<Food,int> s in BowlEQ.instance.GetInventory)
+            foreach (KeyValuePair<Food,int> s in FindObjectOfType<BowlEQ>().GetInventory)
             {
                 Food item = s.Key;
                 int count = s.Value;
@@ -133,9 +145,9 @@ public class InventoryAndDataSaveSystem : MonoBehaviour
     internal Dictionary<Food,int> LoadInventory()
     {
         Dictionary<Food, int> inventory = new Dictionary<Food, int>();
-        if (!File.Exists(filePath))
+        if (!InventorySaveExists())
         {
-            Debug.Log("nie dziala");
+            return inventory;
         }
 
         string line = "";
@@ -144,10 +156,10 @@ public class InventoryAndDataSaveSystem : MonoBehaviour
             while ((line = sr.ReadLine()) != null)
             {
                 int key = int.Parse(line.Split(split_char)[0]);
-                /*Food item = allItemCodes[key];*/
+                Food item = allItemCodes[key];
                 int count = int.Parse(line.Split(split_char)[1]);
                 
-                /*BowlEQ.instance.CreateItemInEQ(item);*/
+                FindObjectOfType<BowlEQ>().LoadSaveInventory(item,count);
             }
             
         }
