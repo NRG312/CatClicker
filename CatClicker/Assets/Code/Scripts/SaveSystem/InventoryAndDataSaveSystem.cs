@@ -158,8 +158,11 @@ public class InventoryAndDataSaveSystem : MonoBehaviour
                 int key = int.Parse(line.Split(split_char)[0]);
                 Food item = allItemCodes[key];
                 int count = int.Parse(line.Split(split_char)[1]);
-                
-                FindObjectOfType<BowlEQ>().LoadSaveInventory(item,count);
+
+                if (count != 0)
+                {
+                    FindObjectOfType<BowlEQ>().LoadSaveInventory(item,count);
+                }
             }
             
         }

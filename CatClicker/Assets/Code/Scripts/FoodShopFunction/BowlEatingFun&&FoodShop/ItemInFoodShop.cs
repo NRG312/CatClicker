@@ -50,7 +50,7 @@ public class ItemInFoodShop : MonoBehaviour
     {
         if (Price <= GameManager.instance.Money)
         {
-            BowlEQ.instance.AddItemInList(food);
+            BowlEQ.instance.CreateItemInEQ(food,1);
             GameManager.instance.BuyProduct(Price);
         }
     }

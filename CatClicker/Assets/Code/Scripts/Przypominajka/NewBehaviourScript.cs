@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 { 
-    //skonczylem robic na zapisie eq w foodshopie
-    //jak przeciagam itemy w eq to wywala blad
-    //dalej probuje zrobic ten saveinventory zatrzymalem sie na funkcji saveinvneotry 
-    //zrob zapis zarcia w eq
+    //zrobilem zapis i ze itemy sie refresuja w eq, teraz mam problem z prysznicem patrz na blocking mask a najbardziej to na box collider toiletroomUI to jest problem
+    //zrob eventy np do jedzenia i takie tam
     //potem zrob animacje kota jak je
     //pozniej trzeba dodac dzwieki do gry ale to jak tamci cos znajda
     //pomysl nad powiekszeniem kota ale wtedy musisz pozmieniac w kojcu i litterboxie pamietaj

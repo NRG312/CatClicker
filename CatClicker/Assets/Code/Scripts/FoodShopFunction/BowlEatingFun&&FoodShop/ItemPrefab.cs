@@ -8,21 +8,19 @@ using UnityEngine.EventSystems;
 public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandler,IDropHandler
 {
     public Food item;
-    public Image CatImage;
     private Image image;
 
-    [HideInInspector] public Transform parentafterDrag;
+    [HideInInspector]public Transform parentafterDrag;
     [HideInInspector] public TMP_Text Amount;
     [HideInInspector] public int AmountItem = 1;
 
 
     private void Start()
     {
-        CatImage = GameObject.Find("CatImage").GetComponent<Image>();
         Amount = GetComponentInChildren<TMP_Text>();
         Amount.text = AmountItem.ToString();
     }
-    //Adding new parameters to itemFoodinEq
+    //Adding new parameters to item Food in Eq
     public void SwitchParameters(Food newItem)
     {
         item = newItem;
@@ -38,7 +36,7 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
     {
         image.raycastTarget = false;
         parentafterDrag = transform.parent;
-        transform.SetParent(GameObject.Find("CatImageUI").transform);
+        transform.SetParent(GameObject.Find("Cat").transform);
         GameObject.Find("FoodShopUI").GetComponent<Canvas>().enabled = false;
     }
     public void OnDrag(PointerEventData data)
@@ -47,6 +45,7 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
     }
     public void OnEndDrag(PointerEventData data)
     {
+        Debug.Log("dziala");
         image.raycastTarget = true;
         GameObject.Find("FoodShopUI").GetComponent<Canvas>().enabled = true;
         transform.SetParent(parentafterDrag);
@@ -61,15 +60,11 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
             {
                 if (AmountItem > 1)
                 {
-                    FunctionStatistics.instance.HungerFunction(item);
-                    AmountItem -= 1;
-                    Amount.text = AmountItem.ToString();
-                    transform.SetParent(parentafterDrag);
+                    UseItem();
                 }
                 else if(AmountItem == 1)
                 {
-                    FunctionStatistics.instance.HungerFunction(item);
-                    Destroy(gameObject);
+                    RemoveItem();
                 }
             }
         }
@@ -79,5 +74,28 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         }
         
     }
-    
+    //
+    private void UseItem()
+    {
+        FunctionStatistics.instance.HungerFunction(item);
+        
+        AmountItem -= 1;
+        Amount.text = AmountItem.ToString();
+        transform.SetParent(parentafterDrag);
+        
+        BowlEQ.instance.DecreaseAmountFromList(item);
+    }
+
+    private void RemoveItem()
+    {
+        FunctionStatistics.instance.HungerFunction(item);
+        
+        BowlEQ.instance.DecreaseAmountFromList(item);
+        BowlEQ.instance.RefreshSlots(parentafterDrag.gameObject,parentafterDrag.parent,item);
+        //Showing UI FoodShop
+        GameObject.Find("FoodShopUI").GetComponent<Canvas>().enabled = true;
+        
+        Destroy(gameObject);
+    }
+    //
 }
