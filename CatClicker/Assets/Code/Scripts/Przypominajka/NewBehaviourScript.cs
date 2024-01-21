@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 { 
-    //zrobilem zapis i ze itemy sie refresuja w eq, teraz mam problem z prysznicem patrz na blocking mask a najbardziej to na box collider toiletroomUI to jest problem
+    //zrobilem zapis i ze itemy sie refresuja w eq oraz poprawilem blad z jedzeniem i mydlem ze juz nie wywala bledu jak sie przesunie obiekt kolo kota
+    //zaczalem robic ustawienia i dodalem muzyke i dzwieki podstawowe
     //zrob eventy np do jedzenia i takie tam
     //potem zrob animacje kota jak je
     //pozniej trzeba dodac dzwieki do gry ale to jak tamci cos znajda
