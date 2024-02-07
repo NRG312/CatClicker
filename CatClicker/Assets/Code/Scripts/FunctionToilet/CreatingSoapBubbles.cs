@@ -21,7 +21,7 @@ public class CreatingSoapBubbles : MonoBehaviour, IPointerDownHandler
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        Instantiate(SoapPrefab, GameObject.Find("CatImageUI").transform);
+        Instantiate(SoapPrefab, GameObject.Find("Cat").transform);
     }
 
 
@@ -43,10 +43,24 @@ public class CreatingSoapBubbles : MonoBehaviour, IPointerDownHandler
         {
             Vector2 CreateRandomBubbles = new Vector2(Random.Range(corner1.transform.position.x, corner2.transform.position.x), Random.Range(corner1.transform.position.y,corner3.transform.position.y));
 
-            GameObject bubble = Instantiate(Bubbles, CreateRandomBubbles, Quaternion.identity, GameObject.Find("CatImageUI").transform);
+            GameObject bubble = Instantiate(Bubbles, CreateRandomBubbles, Quaternion.identity, GameObject.Find("Cat").transform);
             bubbles.Add(bubble);
             time = 0;
         }
         
+    }
+
+    public void DestroyBubbles()
+    {
+        GameObject[] Bubb  = GameObject.FindGameObjectsWithTag("Bubble");
+        if (Bubb != null)
+        {
+            for (int i = 0; i < Bubb.Length; i++)
+            {
+                GameObject objToDestroy = Bubb[i];
+                Destroy(objToDestroy);
+            }
+            
+        }
     }
 }

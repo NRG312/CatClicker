@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName ="New Food",menuName ="Food/Create new Item")]
-public class Food : ScriptableObject
+public class Food : ScriptableObject 
 {
     public Sprite ImageFood;
     public int ValueToIncrease;

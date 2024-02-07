@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cat
   - Bubble
+  - Room
   layers:
   - Default
   - TransparentFX

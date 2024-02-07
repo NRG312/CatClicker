@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -16,7 +13,7 @@ public class GameManager : MonoBehaviour
     public float Money
     {
         get { return actualMoney; }
-        private set 
+        set 
         {
             if (value < 0)
             {
@@ -51,14 +48,17 @@ public class GameManager : MonoBehaviour
     [Range(0,1)] public float chanceforCrit;
     public float multiplierCrit;
     [HideInInspector] public bool detectCrit;
-
-    [HideInInspector] public float AmountOnClick = 0.5f;
+    [HideInInspector] public float amountOnClick = 0.5f;
     [HideInInspector] public float passiveMoney;
     
+    //Data Values
+    private float _timeSave;
+    private bool _firstSave;
+    //
     void Start()
     {
         instance = this;
-        
+        //Starting Couroutines
         StartCoroutine(PassiveGrowth());
         
         //Image cat to click to money growth
@@ -71,14 +71,14 @@ public class GameManager : MonoBehaviour
         if (Random.value > chanceforCrit)
         {
             detectCrit = true;
-            Money += AmountOnClick * multiplierCrit;
+            Money += amountOnClick * multiplierCrit;
             GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
             
         }
         else
         {
             detectCrit = false;
-            Money += AmountOnClick;
+            Money += amountOnClick;
             GameObject.Find("GameController").GetComponent<AnimationsManagerCat>().AnimationOnClickToGrowthMoney();
         }
     }
@@ -93,8 +93,14 @@ public class GameManager : MonoBehaviour
     }
     //
     //Checking Image cat interactable
+    
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+        //Checking that living room is showing
         if (CanClickOnCat == true)
         {
             Image.interactable = true;
@@ -108,19 +114,18 @@ public class GameManager : MonoBehaviour
     public void BuyUpgradesOnTap(float Price,float Amount)
     {
         Money -= Price;
-        AmountOnClick += Amount;
+        amountOnClick += Amount;
     }
     public void BuyUpgradesPassive(float Price,float Amount)
     {
         Money -= Price;
         passiveMoney += Amount;
     }
-    //
-
     //Buying Products
     public void BuyProduct(float Price)
     {
         Money -= Price;
     }
-
+    
+    
 }

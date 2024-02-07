@@ -45,12 +45,6 @@ public class FunctionStatistics : MonoBehaviour
     {
         instance = this;
 
-
-        Hygiene.value = hygiene;
-        WC.value = wc;
-        Hunger.value = hunger;
-        Sleep.value = sleep;
-
         Reducinghygiene = ReducingHygiene();
         Reducingwc = ReducingWC();
         Reducinghunger = ReducingHunger();
@@ -60,6 +54,15 @@ public class FunctionStatistics : MonoBehaviour
         StartCoroutine(Reducingwc);
         StartCoroutine(Reducinghunger);
         StartCoroutine(Reducingsleep);
+    }
+    //Loading values from data
+    public void LoadSavedStats(int Sleep,int Hunger,int Wc,int Hygiene)
+    {
+        hygiene = Hygiene;
+        wc = Wc;
+        hunger = Hunger;
+        sleep = Sleep;
+        RefreshUI();
     }
     private void RefreshUI()
     {

@@ -32,7 +32,7 @@ public class UpgradesSkills : MonoBehaviour
     [SerializeField] private float passiveIncrease;//
     //Amount
     private TMP_Text AmountTxt;
-    private int ActualAmount = 1;//
+    private int actualAmount = 1;//
 
     void Start()
     {
@@ -57,13 +57,30 @@ public class UpgradesSkills : MonoBehaviour
             WhatWillGive.text = whatWillGive + " " + passiveIncrease;
         }
 
+        //load data
+        actualAmount = PlayerPrefs.GetInt(gameObject.name);
+        if (PlayerPrefs.GetInt(gameObject.name) > 0)
+        {
+            for (int i = 0; i < actualAmount; i++)
+            {
+                LoadDataUpgrade();
+            }
+        }
+        //RefreshUI
         buyButton.onClick.AddListener(OnBuy);
+        RefreshUI();
+    }
+    //load data
+    private void LoadDataUpgrade()
+    {
+        IncreasePrice();
+        IncreaseUpgradeAmount();
         RefreshUI();
     }
     private void RefreshUI()
     {
         PriceTxt.text = Price.ToString("F2");
-        AmountTxt.text = ActualAmount.ToString();
+        AmountTxt.text = actualAmount.ToString();
         if (typeOfUpgrade == TypeOfUpgrade.OnTap)
         {
             WhatWillGive.text = whatWillGive + " " + increaseOnTap.ToString("F2");
@@ -83,6 +100,7 @@ public class UpgradesSkills : MonoBehaviour
             IncreaseUpgradeAmount();
             ChangeAmountText(1);
             RefreshUI();
+            AudioManager.Instance.PlaySound("ClickButtonUpgrades");
         }
         //
         if (GameManager.instance.Money >= Price && typeOfUpgrade == TypeOfUpgrade.Passive)
@@ -92,6 +110,7 @@ public class UpgradesSkills : MonoBehaviour
             IncreaseUpgradeAmount();
             ChangeAmountText(1);
             RefreshUI();
+            AudioManager.Instance.PlaySound("ClickButtonUpgrades");
         }
     }
     private void Update()
@@ -108,24 +127,27 @@ public class UpgradesSkills : MonoBehaviour
 
     private void ChangeAmountText(int amount)
     {
-        ActualAmount += amount;
+        actualAmount += amount;
+        PlayerPrefs.SetInt(gameObject.name,actualAmount);
     }
+    //Price function
     private void IncreasePrice()
     {
         if (typeOfUpgrade == TypeOfUpgrade.OnTap)
         {
-            float amountIncrease = mainPrice * firstVariable * ActualAmount * secondVariable;
+            float amountIncrease = mainPrice * firstVariable * actualAmount * secondVariable;
             Price += amountIncrease;
         }
 
 
         if (typeOfUpgrade == TypeOfUpgrade.Passive)
         {
-            float amountIncrease = mainPrice * firstVariable * ActualAmount * secondVariable;
+            float amountIncrease = mainPrice * firstVariable * actualAmount * secondVariable;
             Price += amountIncrease;
         }
 
     }
+    //Upgrades function after buy
     private void IncreaseUpgradeAmount()
     {
         if (typeOfUpgrade == TypeOfUpgrade.OnTap)
