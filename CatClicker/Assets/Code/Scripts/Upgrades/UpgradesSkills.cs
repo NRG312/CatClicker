@@ -100,6 +100,7 @@ public class UpgradesSkills : MonoBehaviour
             IncreaseUpgradeAmount();
             ChangeAmountText(1);
             RefreshUI();
+            AudioManager.Instance.PlaySound("ClickButtonUpgrades");
         }
         //
         if (GameManager.instance.Money >= Price && typeOfUpgrade == TypeOfUpgrade.Passive)
@@ -109,6 +110,7 @@ public class UpgradesSkills : MonoBehaviour
             IncreaseUpgradeAmount();
             ChangeAmountText(1);
             RefreshUI();
+            AudioManager.Instance.PlaySound("ClickButtonUpgrades");
         }
     }
     private void Update()

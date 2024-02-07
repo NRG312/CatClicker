@@ -84,6 +84,8 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         transform.SetParent(parentafterDrag);
         
         BowlEQ.instance.DecreaseAmountFromList(item);
+        //Play sound
+        AudioManager.Instance.PlaySound("Eating");
     }
 
     private void RemoveItem()
@@ -94,6 +96,8 @@ public class ItemPrefab : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         BowlEQ.instance.RefreshSlots(parentafterDrag.gameObject,parentafterDrag.parent,item);
         //Showing UI FoodShop
         GameObject.Find("FoodShopUI").GetComponent<Canvas>().enabled = true;
+        //Play sound
+        AudioManager.Instance.PlaySound("Eating");
         
         Destroy(gameObject);
     }

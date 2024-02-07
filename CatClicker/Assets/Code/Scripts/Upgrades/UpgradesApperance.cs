@@ -56,6 +56,7 @@ public class UpgradesApperance : MonoBehaviour
             GameManager.instance.BuyProduct(priceOfProduct);
             selectButton.gameObject.SetActive(true);
             PlayerPrefs.SetInt(gameObject.name,1);
+            AudioManager.Instance.PlaySound("ClickButtonUpgrades");
         }
     }
     private void SelectProduct()
